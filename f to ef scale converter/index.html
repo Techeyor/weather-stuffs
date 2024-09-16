@@ -7,6 +7,7 @@
 	 <style>
   		h1 {
 			color:red;
+			text: solid black 1px;
 		}
   		p {color:blue;}
 		th{
@@ -45,6 +46,10 @@
 	<p>
 		For context, the estimated windspeeds on the Fuijta scale beyond F3 are overestimated. So when the National Weather Service created the Enhanced Fujita scale, they used a complex equation to convert those overestiated winds to more accurate guesses. This is why F4 and F5 are so different compared to EF4 and EF5. With this method, it is possible to convert F6-12 to the EF scale, which I have converted the F6 to the Enhanced Scale for you.
 	</p>
+	<input type = "number" id="converter"> <button id="submit">Convert!</button>
+	<h2 id="mph">0 MPH</h2>
+	<hr>
+	<br>
 <table>
   <tr>
     <th>EF Rating</th>
@@ -53,41 +58,46 @@
   </tr>
   <tr>
     <td class="ef0">EF0</td>
-    <td>65-85</td>
-    <td><73</td>
+    <td class="ef0">65-85</td>
+    <td class="ef0"><73</td>
   </tr>
   <tr>
     <td class="ef1">EF1</td>
-    <td>86-110</td>
-    <td>73–112</td>
+    <td class="ef1">86-110</td>
+    <td class="ef1">73–112</td>
   </tr>
   <tr>
     <td class="ef2">EF2</td>
-    <td>111-135</td>
-    <td>113–157</td>
+    <td class="ef2">111-135</td>
+    <td class="ef2">113–157</td>
   </tr>
   <tr>
     <td class="ef3">EF3</td>
-    <td>136-165</td>
-    <td>158–206</td>
+    <td class="ef3">136-165</td>
+    <td class="ef3">158–206</td>
   </tr>
   <tr>
     <td class="ef4">EF4</td>
-    <td>166-200</td>
-    <td>207–260</td>
+    <td class="ef4">166-200</td>
+    <td class="ef4">207–260</td>
   </tr>
   <tr>
     <td class="ef5">EF5</td>
-    <td>
-		201-234 (while being unlimited officialy, when doing the math 234 		was found to be the max for EF5. Try it yourself!)
+    <td class="ef5">
+		201-234 (while being unlimited officialy, when doing the math 235 		was found to be the max for EF5. Try it yourself!)
 	 </td>
-    <td>261–318</td>
+    <td class="ef5">261–318</td>
   </tr>
   <tr>
     <td class="ef6">Hypothetical EF6</td>
-    <td>14</td>
-    <td>319-368</td>
+    <td class="ef6">236 - 266</td>
+    <td class="ef6">319-368</td>
   </tr>
 </table>
+<script>
+	document.getElementById("submit").onclick = function(){
+		document.getElementById("mph").innerHTML = 		String(document.getElementById("converter").value * .6246 + 36.393) + " MPH"
+	}
+</script>
 </body>
 </html>
